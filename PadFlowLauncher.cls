@@ -9,15 +9,15 @@ Attribute VB_PredeclaredId = False
 Attribute VB_Exposed = False
 Option Explicit
 
-'åˆæœŸå€¤ç”¨å®šæ•°
+'‰Šú’l—p’è”
 Private Const INIT_WIN_TITLE = "Power Automate Desktop"
-Private Const INIT_BTN_NAME = "å®Ÿè¡Œ"
+Private Const INIT_BTN_NAME = "Às"
 Private Const PAD_EXE_PATH = "C:\Program Files (x86)\Power Automate Desktop\PAD.Console.Host.exe"
 
 Private Const KEY_RIGHT = "{Right}"
 Private Const MAX_RETRY = 2
 
-'ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£å€¤
+'ƒvƒƒpƒeƒB’l
 Private pWinTitle   As String
 Private pBtnName    As String
 Private pPADexePath As String
@@ -68,26 +68,26 @@ Private Sub Class_Terminate()
     
 End Sub
 
-'Power Automation Desktopã‚³ãƒ³ã‚½ãƒ¼ãƒ«ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ã‚¿ã‚¤ãƒˆãƒ«
+'Power Automation DesktopƒRƒ“ƒ\[ƒ‹ƒEƒBƒ“ƒhƒE‚Ìƒ^ƒCƒgƒ‹
 Public Property Let windowTitle(ByVal strWindowTitle As String)
     pWinTitle = strWindowTitle
 End Property
 
-'Power Automation Desktopã‚³ãƒ³ã‚½ãƒ¼ãƒ«ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®å®Ÿè¡Œãƒœã‚¿ãƒ³å
+'Power Automation DesktopƒRƒ“ƒ\[ƒ‹ƒEƒBƒ“ƒhƒE‚ÌÀsƒ{ƒ^ƒ“–¼
 Public Property Let buttonName(ByVal strpBtnName As String)
     pBtnName = strpBtnName
 End Property
 
-'Power Automation Desktopã‚³ãƒ³ã‚½ãƒ¼ãƒ«ã®exeãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹
+'Power Automation DesktopƒRƒ“ƒ\[ƒ‹‚Ìexeƒtƒ@ƒCƒ‹ƒpƒX
 Public Property Let PADexePath(ByVal strPath As String)
     pPADexePath = strPath
 End Property
 
-'Elementã‚’å–å¾—ã™ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰
-' objPrnt   :   æ¤œç´¢ã®åŸºæº–ã¨ãªã‚‹è¦ªElement
-' strNameId :   å–å¾—ã—ãŸã„Elementã®NamePropertyId
-' lngIndex  :   ä¸€è‡´ã—ãŸElementãƒªã‚¹ãƒˆã®nç•ªç›®
-' æˆ»ã‚Šå€¤    :   å–å¾—ã—ãŸElement,å–å¾—ã§ããªã‹ã£ãŸå ´åˆã¯Nothingã‚’è¿”ã™
+'Element‚ğæ“¾‚·‚éƒƒ\ƒbƒh
+' objPrnt   :   ŒŸõ‚ÌŠî€‚Æ‚È‚éeElement
+' strNameId :   æ“¾‚µ‚½‚¢Element‚ÌNamePropertyId
+' lngIndex  :   ˆê’v‚µ‚½ElementƒŠƒXƒg‚Ìn”Ô–Ú
+' –ß‚è’l    :   æ“¾‚µ‚½Element,æ“¾‚Å‚«‚È‚©‚Á‚½ê‡‚ÍNothing‚ğ•Ô‚·
 Private Function getElement(ByVal objPrnt As UIAutomationClient.IUIAutomationElement, _
                             ByVal strNameId As String, _
                             ByVal lngIndex As Long) As UIAutomationClient.IUIAutomationElement
@@ -128,12 +128,12 @@ FINAL:
     
 End Function
 
-'getElementãƒ¡ã‚½ãƒƒãƒ‰ã‚’Retryã—ãªãŒã‚‰å‡¦ç†ã™ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰
-' objPrnt   :   æ¤œç´¢ã®åŸºæº–ã¨ãªã‚‹è¦ªElement
-' strNameId :   å–å¾—ã—ãŸã„Elementã®NamePropertyId
-' lngIndex  :   ä¸€è‡´ã—ãŸElementãƒªã‚¹ãƒˆã®nç•ªç›®
-' lngTimes  :   æœ€å¤§Retryå›æ•°
-' æˆ»ã‚Šå€¤    :   å–å¾—ã—ãŸElement,å–å¾—ã§ããªã‹ã£ãŸå ´åˆã¯Nothingã‚’è¿”ã™
+'getElementƒƒ\ƒbƒh‚ğRetry‚µ‚È‚ª‚çˆ—‚·‚éƒƒ\ƒbƒh
+' objPrnt   :   ŒŸõ‚ÌŠî€‚Æ‚È‚éeElement
+' strNameId :   æ“¾‚µ‚½‚¢Element‚ÌNamePropertyId
+' lngIndex  :   ˆê’v‚µ‚½ElementƒŠƒXƒg‚Ìn”Ô–Ú
+' lngTimes  :   Å‘åRetry‰ñ”
+' –ß‚è’l    :   æ“¾‚µ‚½Element,æ“¾‚Å‚«‚È‚©‚Á‚½ê‡‚ÍNothing‚ğ•Ô‚·
 Private Function getElementLapper(ByVal objPrnt As UIAutomationClient.IUIAutomationElement, _
                                   ByVal strNameId As String, _
                                   ByVal lngIndex As Long, _
@@ -165,8 +165,8 @@ Private Function getElementLapper(ByVal objPrnt As UIAutomationClient.IUIAutomat
     
 End Function
 
-'Power Automate Desktopã®ãƒ•ãƒ­ãƒ¼ã‚’å®Ÿè¡Œã™ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰
-' strFlowName   :   å®Ÿè¡Œã™ã‚‹ãƒ•ãƒ­ãƒ¼å
+'Power Automate Desktop‚Ìƒtƒ[‚ğÀs‚·‚éƒƒ\ƒbƒh
+' strFlowName   :   Às‚·‚éƒtƒ[–¼
 Public Sub runFlow(ByVal strFlowName As String)
     
     Dim objFrm As UIAutomationClient.IUIAutomationElement
@@ -177,22 +177,22 @@ Public Sub runFlow(ByVal strFlowName As String)
     
     On Error GoTo CATCH
     
-    'ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒæœ€å°åŒ–ã‚„é€šçŸ¥é ˜åŸŸã«ã‚ã‚‹å ´åˆã§ã‚‚exeã‚’å®Ÿè¡Œã™ã‚Œã°
-    'ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦è¡¨ç¤ºã•ã‚Œã‚‹ã¯ãšãªã®ã§exeã‚’å®Ÿè¡Œã™ã‚‹ã ã‘ã«ã—ã¦ãŠã
+    'ƒEƒBƒ“ƒhƒE‚ªÅ¬‰»‚â’Ê’m—Ìˆæ‚É‚ ‚éê‡‚Å‚àexe‚ğÀs‚·‚ê‚Î
+    'ƒEƒBƒ“ƒhƒE•\¦‚³‚ê‚é‚Í‚¸‚È‚Ì‚Åexe‚ğÀs‚·‚é‚¾‚¯‚É‚µ‚Ä‚¨‚­
     With New IWshRuntimeLibrary.WshShell
         .Run """" & pPADexePath & """", 0, False
     End With
     
-    'ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦å–å¾—
+    'ƒEƒBƒ“ƒhƒEæ“¾
     Set objFrm = getElementLapper(pObjRoot, pWinTitle, 0, 10)
     
-    'å¯¾è±¡è¡Œå–å¾—
+    '‘ÎÛsæ“¾
     Set objRow = getElementLapper(objFrm, strFlowName, 1, 2)
     objRow.SetFocus
     Application.Wait Now() + TimeValue("00:00:01")
     SendKeys KEY_RIGHT
     
-    'ãƒœã‚¿ãƒ³å–å¾—ï¼†ã‚¯ãƒªãƒƒã‚¯
+    'ƒ{ƒ^ƒ“æ“¾•ƒNƒŠƒbƒN
     Set objBtn = getElementLapper(objRow, pBtnName, 0, 1)
     Set objIvk = objBtn.GetCurrentPattern(UIA_InvokePatternId)
     objIvk.Invoke
